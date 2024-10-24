@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+     csmm:
+          container_name: csmm # Set the container name
+          image: east252prg/csmm:latest
+          ports:
+               - "1337:1337" # Map port 1337 from the container to the host
+          volumes:
+               - mysql_data:/var/lib/mysql # Persist MySQL data
+          environment:
+               NODE_ENV: "production" # Set the NODE_ENV variable to production
+          restart: unless-stopped # Restart policy
+
+volumes:
+     mysql_data:

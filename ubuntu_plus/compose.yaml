@@ -1,0 +1,21 @@
+services:
+     ubuntu_service:
+          image: east252prg/ubuntu_plus:v1.0
+          container_name: ubuntu_plus
+          entrypoint: /app/entry.sh
+          command: tail -f /dev/null # Keeps the container running indefinitely
+          ports:
+               - 22:22
+          working_dir: /app # Sets the working directory inside the container
+          volumes:
+               - ubuntu_volume:/app/data
+          networks:
+               - ubuntu_network # Connects the container to the ubuntu_network
+          restart: always # Ensures the container restarts if it crashes
+
+networks:
+     ubuntu_network:
+          driver: bridge # Creates a bridge network for containers
+
+volumes:
+     ubuntu_volume: # Optional named volume for data persistence
