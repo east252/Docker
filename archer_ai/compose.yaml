@@ -48,6 +48,3 @@ networks:
 volumes:
      ollama_data: # Define the volume for Ollama
      ollama_webui_data: # Define the volume for the web UI
-
-# shell into ollama, and run ollama run llama3.2 (or whatever version you want.)
-# Wetting resource limits on ollama isn't a bad idea. .2 for CPU (20%) and 16G for Ram (16gb).
