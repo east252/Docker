@@ -12,48 +12,48 @@
 */
 
 body {
-  background-color: lightgrey;
-  margin-left: 20px;
-  margin-top: 20px;
+	background-color: lightgrey;
+	margin-left: 20px;
+	margin-top: 20px;
 }
 
 h1 {
-  color: green;
-  text-align: center;
+	color: green;
+	text-align: center;
 }
 
 #para1 {
-  font-family: verdana;
-  font-size: 20px;
-  text-align: center;
+	font-family: verdana;
+	font-size: 20px;
+	text-align: center;
 }
 
 #intro {
-  font-family: verdana;
-  font-size: 15px;
+	font-family: verdana;
+	font-size: 15px;
 }
 
 #logo {
-  height: 225px;
-  width: 300px;
+	height: 225px;
+	width: 300px;
 }
 
 #para1 {
-  text-align: center;
+	text-align: center;
 }
 
 #input {
-  height: 100px;
-  width: 500px;
-  font-size: 15px;
-  border-radius: 10px;
+	height: 100px;
+	width: 500px;
+	font-size: 15px;
+	border-radius: 10px;
 }
 
 #submit_button {
-  background-color: green;
-  border-radius: 50px;
-  box-shadow: 2px 2px 2px 2px;
-  padding-left: 20px;
-  padding-right: 20px;
-  margin-left: 420px;
+	background-color: green;
+	border-radius: 50px;
+	box-shadow: 2px 2px 2px 2px;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin-left: 420px;
 }

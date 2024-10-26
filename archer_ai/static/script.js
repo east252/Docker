@@ -1,5 +1,5 @@
 /*
-    This Javascript is a part of the Reggie Program.
+    This Javascript is a part of the Archer Program.
     Javascript comments are // or /* until */
 /*
 
@@ -8,28 +8,28 @@
 
 */
 function sendData() {
-  var value = document.getElementById("input").value;
-  $.ajax({
-    url: "/process",
-    type: "POST",
-    data: { data: value },
-    success: function (response) {
-      document.getElementById("output").innerHTML = response;
-    },
-    error: function (error) {
-      console.log(error);
-    },
-  });
+	var value = document.getElementById("input").value;
+	$.ajax({
+		url: "/process",
+		type: "POST",
+		data: { data: value },
+		success: function (response) {
+			document.getElementById("output").innerHTML = response;
+		},
+		error: function (error) {
+			console.log(error);
+		},
+	});
 }
 
 function clearData() {
-  document.getElementById("input").value = "";
+	document.getElementById("input").value = "";
 }
 
 function thinking() {
-  document.getElementById("output").textContent = "Thinking . . .";
+	document.getElementById("output").textContent = "Thinking . . .";
 }
 
 function hello() {
-  console.log("Hello World!");
+	console.log("Hello World!");
 }

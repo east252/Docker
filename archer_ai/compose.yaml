@@ -5,7 +5,7 @@ services:
           container_name: archer_ai # Set the container name
           image: archer_ai:v1
           ports:
-               - "51434:51434" # Map port 1337 from the container to the host
+               - "5000:5000" # Map port from the container to the host
           volumes:
                - archer_ai_data:/mnt/share/ # Persist MySQL data
           restart: unless-stopped # Restart policy
