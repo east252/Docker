@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!--
+	This is the HTML for Reggie. Reggie is a regenerative AI.
+	This HTML has the default beginning with line 1 & 2 along
+	with the meta charset and meta name/content/scale.
+
+	Reggie has a CSS file called style and a JS file called script.
+	Reggie features an active button, send data to python, clear data in text area
+	and thinking functions.
+-->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Reggie</title>
+  </head>
+  <body>
+    <link rel="stylesheet" href="/static/styles.css" />
+    <img id="logo" src="/static/Reggie.png" />
+    <h1>Reggie AI</h1>
+    <p id="para1">Regenerative Artificial Intelligence</p>
+    <br />
+    <br />
+    <p id="intro">Hello. I am Reggie. Enter your question and press submit!</p>
+    <textarea
+      type="text"
+      id="input"
+      placeholder="Enter your question and allow Reggie time to respond!"
+    ></textarea>
+    <br />
+    <br />
+    <button id="submit_button" onclick="sendData(); clearData(); thinking()">
+      Submit
+    </button>
+    <br /><br />
+    <div id="output"></div>
+    <script type="text/javascript" src="/static/script.js"></script>
+  </body>
+</html>

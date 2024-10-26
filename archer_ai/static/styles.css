@@ -1,0 +1,59 @@
+/*
+    This CSS belongs to the Reggie program.
+    CSS is a very simple language that works with { }.
+    Each line ends ; Comments are only /* until */
+/*
+    CSS has selectors to determine what it is modifying.
+    body, h1, p are Body/Heading/Paragraph respectively.
+    We can select by id by using the # sign ( #Logo ).
+    Class items can be selected as well by . before it (.Center or .Class2)
+    Universal (all) selector is * . This applies to everything.
+    Group Selector is when we mix. h1, h2, p . 
+*/
+
+body {
+  background-color: lightgrey;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+h1 {
+  color: green;
+  text-align: center;
+}
+
+#para1 {
+  font-family: verdana;
+  font-size: 20px;
+  text-align: center;
+}
+
+#intro {
+  font-family: verdana;
+  font-size: 15px;
+}
+
+#logo {
+  height: 225px;
+  width: 300px;
+}
+
+#para1 {
+  text-align: center;
+}
+
+#input {
+  height: 100px;
+  width: 500px;
+  font-size: 15px;
+  border-radius: 10px;
+}
+
+#submit_button {
+  background-color: green;
+  border-radius: 50px;
+  box-shadow: 2px 2px 2px 2px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: 420px;
+}

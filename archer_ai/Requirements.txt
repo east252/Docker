@@ -1,0 +1,13 @@
+flask
+pandas
+llama-index
+qdrant_client
+pypdf
+transformers
+torch
+async-timeout
+docx2txt
+ollama
+llama-index-llms-ollama
+llama-index-vector-stores-postgres
+llama-index-embeddings-huggingface
