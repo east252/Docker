@@ -1,14 +1,53 @@
-version: "3.8"
+#####
+#   Archer AI
+#   Archer AI is a stack containing ollama and ollama_web_ui.
+#
+#
+#
+#   Setting resource limits on ollama isn't a bad idea. .2 for CPU (20%) and 16G for Ram (16gb).
+###
 
 services:
-     archer_ai:
-          container_name: archer_ai # Set the container name
-          image: archer_ai:v1
-          ports:
-               - "5000:5000" # Map port from the container to the host
+     # Ollama
+     ollama:
+          image: ollama/ollama:latest # Replace with the correct image for Ollama if needed
+          container_name: ollama
+          #runtime: nvidia
+          environment:
+               - NVIDIA_DRIVER_CAPABILITIES=compute,utility # Added environment variable
+               - NVIDIA_VISIBLE_DEVICES=all # Ensures all GPUs are accessible
           volumes:
-               - archer_ai_data:/mnt/share/ # Persist MySQL data
-          restart: unless-stopped # Restart policy
+               - ollama_data:/root/.ollama # Mount the volume
+          networks:
+               - ollama_network
+          entrypoint: /bin/ollama # Set the entry point
+          command: serve # Run the 'serve' command
+          restart: "no" # Set restart policy to never
+
+     # Ollama web ui
+     ollama-web-ui:
+          image: ghcr.io/oliverbob/gpt-ui:main
+          container_name: ollama_web_ui
+          ports:
+               - "3000:8080" # Map the container's port 8080 to host's port 3000
+          environment:
+               - OLLAMA_API_BASE_URL=http://ollama:11434/api # Added new environment variable
+          depends_on:
+               - ollama
+          networks:
+               - ollama_network
+          command: sh start.sh # Run the 'start.sh' script
+          restart: "no" # Set restart policy to never
+          volumes:
+               - ollama_webui_data:/app/backend/data # Mount the volume for web UI
+
+networks:
+     ollama_network:
+          driver: bridge
 
 volumes:
-     mysql_data:
+     ollama_data: # Define the volume for Ollama
+     ollama_webui_data: # Define the volume for the web UI
+
+# shell into ollama, and run ollama run llama3.2 (or whatever version you want.)
+# Wetting resource limits on ollama isn't a bad idea. .2 for CPU (20%) and 16G for Ram (16gb).
